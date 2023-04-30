@@ -9,7 +9,7 @@ export default class LocationCards extends Component {
     return (
       <div className='border h-20 w-48 flex px-3 items-center rounded-md bg-[#9C9C9C1A]'>
         <div className='bg-white p-2 mr-2 rounded-md'>
-        <img src="/images/healthIcon.svg" width={34} height={30} alt="" />
+        <img src="/images/healthIcon.svg" width={34} height={30} alt="" className='mb-2'/>
         </div>
         <p className='line-clamp-2 text-[#9C9C9C] text-sm'>
         {this.props.name}
