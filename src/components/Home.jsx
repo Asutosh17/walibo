@@ -12,7 +12,8 @@ class Home extends Component {
     this.state = {
       locationsData : [],
       CharacterData : [],
-      showAll : false
+      showAll : false,
+      selectedId : ""
     }
   }
 
@@ -24,7 +25,10 @@ componentDidMount() {
 handleClick = async(item) => {
   const { getLocationResidents } = this.props;
  await getLocationResidents(item);
-  this.setState({ CharacterData: this.props.characters })
+  this.setState({ 
+    CharacterData: this.props.characters,
+    selectedId : item.id 
+  })
 };
 
 handleExplore = () => {
@@ -48,7 +52,7 @@ componentDidUpdate(prevProps) {
 }
 
 render() {
-
+  console.log("location data", this.state.selectedId);
   return (
     <div className='px-[20%] pt-[6%] pb-[10%] w-full h-full'>
     <div className='mb-5'>
@@ -67,7 +71,7 @@ render() {
     <div className='flex flex-wrap gap-5 hover:cursor-pointer my-5'>
     {
       this.state.locationsData && this.state.locationsData.map((item,index) => <div key={index} onClick={() => this.handleClick(item)}>
-         {this.state.showAll ? <LocationCards name={item.name}/> : index < 4 && <LocationCards name={item.name}/>}
+         {this.state.showAll ? <LocationCards name={item.name} isSelected={this.state.selectedId === item.id}/> : index < 4 && <LocationCards name={item.name} isSelected={this.state.selectedId === item.id}/>}
       </div>)
     }
     </div>

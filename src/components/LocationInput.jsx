@@ -27,7 +27,6 @@ class LocationInputnew extends Component {
   }
   
   render() {
-console.log("input", this.state.input);
     return (
       <div className='flex flex-col items-center gap-3'>
         <p className='font-semibold'>Location</p>
