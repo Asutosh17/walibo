@@ -14,11 +14,16 @@ class CharacterDetails extends Component {
     
       componentDidMount() {
         // Retrieve the selected character's data from localStorage
-        const selectedCharacter = JSON.parse(localStorage.getItem('selectedCharacter'))
-        if (selectedCharacter) {
-          this.setState({ character_id: selectedCharacter })
-          this.props.getCharacterById(selectedCharacter)
+        const url = window.location.href;
+        const regex = /\/id=(\d+)/; 
+        const match = url.match(regex);
+        if (match) {
+        const id = match[1];
+        if (id) {
+          this.setState({ character_id: id })
+          this.props.getCharacterById(id)
         }
+      }
       }
 
       componentDidUpdate(prevProps) {

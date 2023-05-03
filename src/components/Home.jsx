@@ -37,8 +37,7 @@ handleExplore = () => {
 
 handleCharacterDetailsClick = async(item) => {
   if(item){
-    localStorage.setItem('selectedCharacter', JSON.stringify(item.id))
-      window.location.href = `/character/${item.id}/${item.name}`
+      window.location.href = `/character/id=${item.id}/${item.name}`
   }
 }
 
