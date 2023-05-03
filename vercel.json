@@ -1,7 +1,7 @@
 {
     "routes": [
       {
-        "src": "/character/:id",
+        "src": "/character/:id/:name",
         "dest": "/characterDetails.js"
       }
     ]
