@@ -9,7 +9,7 @@ export default class AllRouters extends Component {
       <div>
         <Routes>
             <Route path="/" element={<Home/>}></Route>
-            <Route path="/character/:id/:name" render={this.props} element={<CharacterDetails/>}></Route>
+            <Route path="/character/:id/:name" element={<CharacterDetails/>}></Route>
         </Routes>
       </div>
     )
